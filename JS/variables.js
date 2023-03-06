@@ -6,6 +6,8 @@ let kgLimon = 0
 let kgNaranja = 0
 
 let total = 0
+let iCuotas = 0
+let cuotas = 0
 
 let msjInicial = "Selecciona que fruta desea agregar al carrito:\n" +
                 "Ingrese un número:\n" +
@@ -22,6 +24,10 @@ let msjMenu =   "Bienvenido a UvaScript! ¿En que lo podemos ayudar?\n" +
                 "2) Ver las frutas en su carrito\n" +
                 "3) Ver el costo total de su carrito\n" +
                 "4) Efectuar la compra y terminar con su atención\n"
+
+let msjCuotas = "Ingrese la cantidad de cuotas en las que desea hacer el pago:\n" +
+"3) 20% Recargo\n" + 
+"6) 45% Recargo"
 
 let continuar = true
 

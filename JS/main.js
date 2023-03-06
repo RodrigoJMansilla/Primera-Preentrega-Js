@@ -84,6 +84,18 @@ function menu(){
 
             if(!continuar){
                 alert("El precio final de su carrito es: $" + total)
+
+                if(confirm("Desea pagar en cuotas?")){
+                    iCuotas = parseInt(prompt(msjCuotas))
+                    
+                    while((iCuotas !== 3 && iCuotas !== 6) || isNaN(iCuotas)){
+                        console.warn("El numero de cuotas debe ser 3 o 6, ingreselo nuevamente.\n")
+                        iCuotas = parseInt(prompt("ingrese '3' o '6' de acuerdo a la cantidad de cuotas requeridas."))
+                    }
+
+                    alert("El pago se realizara en " + iCuotas + " cuotas de $" + calculaCuotas(total, iCuotas))
+                }
+
                 direccionCliente = prompt("Ingrese la dirección de envío:")
                 alert("Muchas Gracias por su compra! ya estamos preparando su pedido.")
             }
@@ -95,6 +107,18 @@ function menu(){
     }
 }
 
+function calculaCuotas(precio, i){
+    
+    if(i==3){
+        precio *= 1.2
+        return precio/i
+    }
+    else if(i==6){
+        precio *= 1.45
+        return precio/i
+    }
+}
+
 function resetear(){
     kgBanana = 0
     kgManzana = 0
@@ -103,6 +127,7 @@ function resetear(){
     kgLimon = 0
     kgNaranja = 0
     total = 0
+    cuotas = 0
     continuar = true
 }
 
